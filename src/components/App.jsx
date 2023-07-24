@@ -1,16 +1,29 @@
-export const App = () => {
+import React, { Component } from "react";
+import Form from "./Phonebook/PhonebookForm";
+
+export default class App extends Component  {
+  state = {
+    contacts: [],
+    
+  }
+
+  formSubmitHandler = data =>{
+    console.log(data);
+  }
+
+render(){
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
+    
+    <div>
+    <Form onSubmit={this.formSubmitHandler}></Form>
+<h2>Contacts</h2>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+</div>
+   );
+}
+  
 };
