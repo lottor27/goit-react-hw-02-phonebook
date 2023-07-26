@@ -1,21 +1,22 @@
 import React from "react";
 
-const PhoneBookList = ({contacts,deleteContacts} ) =>{
-    
-<ul>
-    {contacts.map(({id, contacts, text,completed  }) =>
-    (
-       <li key={id}>{text}: {text}
+
+const PhoneBookList = ({allContacts} ) =>{
+    return(
+    <ul>
+      {allContacts.map(({id, name, number})=>( 
+      <li 
+      key={id}>{name}: {number}
        <button
           type="button"
-          className="TodoList__btn"
-          onClick={() => deleteContacts(id)}
+          
+          onClick={() => console.log('Delete')}
         >
           Удалить
         </button></li> 
     ))}
   
-</ul>
+</ul>)
 }
 
 export default PhoneBookList
