@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Form from "./Phonebook/PhonebookForm";
-import PhoneBookList from "./Phonebook/PhoneBookList";
+import PhoneBookList from "./PhonebookList/PhoneBookList";
 import { nanoid } from 'nanoid'
-import Filter from "./Phonebook/Filter";
+import Filter from "./Filter/Filter";
 import Notiflix from 'notiflix';
 
 

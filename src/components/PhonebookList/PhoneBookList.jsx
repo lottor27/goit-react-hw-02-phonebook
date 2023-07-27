@@ -1,18 +1,18 @@
 import React from "react";
-
+import css from './PhoneBookList.module.css'
 
 const PhoneBookList = ({visibleContacts, onDeleteContacts } ) =>{
-  // console.log(visibleContacts);
     return(
       <div>
       
-      <ul>
+      <ul className={css.list}>
       {visibleContacts.map(contact =>( 
-      <li 
+      <li className={css.textList}
       key={contact.id}>{contact.name}: {contact.number}
        <button
           type="button"
           onClick={() => onDeleteContacts(contact.id)}
+          className={css.delbtn}
         >
           Удалить
         </button></li> 
