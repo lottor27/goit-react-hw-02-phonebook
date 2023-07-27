@@ -2,21 +2,26 @@
 
 
 // class PhoneBookEditor extends Component {
-//   state = {
-//     message: '',
-//   };
+//     state = {
+//         name: '',
+//         number: ''
+//         }
 
-//   handleChange = e => {
-//     this.setState({ message: e.currentTarget.value });
-//   };
+//         handleChange=(event) =>{
 
-//   handleSubmit = e => {
-//     e.preventDefault();
+//             const {name, value} = event.currentTarget;
+//             this.setState({
+//               [name]:value})
+//             }
 
-//     this.props.onSubmit(this.state.message);
-
-//     this.setState({ message: '' });
-//   };
+//             andleSabmit=(event) =>{
+//                 event.preventDefault()
+              
+//                 console.log(this.state);
+//                 this.props.onSubmit(this.state)
+              
+//                 this.reset()
+//               }
 
 //   render() {
 //     return (
