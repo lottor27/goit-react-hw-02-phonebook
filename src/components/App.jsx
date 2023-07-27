@@ -32,12 +32,17 @@ export default class App extends Component  {
     const checkName = this.state.contacts.map(el=>el.name).includes(contact.name)
     const checkNumbers = this.state.contacts.map(el=>el.number).includes(contact.number)
     
-    if (checkName) {
-      Notiflix.Report.failure("sds");
-      return
-    } else if (checkNumbers) {
+    if (checkName && checkNumbers) {
       Notiflix.Report.failure( 
-        ${contact.number} "is already in contacts");
+        `${contact.name} and ${contact.number} is already in contacts`);
+      return
+    } else if (checkName) {
+      Notiflix.Report.failure( 
+        `${contact.name} is already in contacts`);
+      return
+    } else if (checkNumbers){
+      Notiflix.Report.failure( 
+        `${contact.number} is already in contacts`);
       return
     }
 
@@ -46,8 +51,8 @@ export default class App extends Component  {
     }));
     console.log(this.state);
     console.log(contact);
-
   };
+
 
   deleteContact = contactId => {
     this.setState(prevState => ({
@@ -55,8 +60,8 @@ export default class App extends Component  {
     }));
   };
 
+
   toggleCompleted = contactId => {
-  
     this.setState(({ contacts }) => ({
       contacts: contacts.map(contact =>
         contact.id === contactId ? { ...contact, completed: !contact.completed } : contact,
@@ -64,12 +69,10 @@ export default class App extends Component  {
     }));
   };
 
+
   changeFilter = e => {
     this.setState({ filter: e.currentTarget.value });
-    
   };
-
-  
 
 
   formSubmitHandler = data =>{
@@ -79,6 +82,7 @@ export default class App extends Component  {
     this.state.contacts.push(data)
     console.log(this.state.contacts);
   }
+
 
   getVisibleContacts = () => {
     const { filter, contacts } = this.state;
@@ -91,7 +95,6 @@ export default class App extends Component  {
   };
   
 render(){
- 
   return (
     <div> 
   <h2>Phonebook</h2>
@@ -106,7 +109,6 @@ render(){
     contacts={this.state.contacts} 
     visibleContacts={this.getVisibleContacts()}onDeleteContacts={this.deleteContact} />
 </div>
-   );
+  );
 }
-  
 };
