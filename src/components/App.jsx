@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import Form from "./Phonebook/PhonebookForm";
-// import allContacts from '../contacts.json'
 import PhoneBookList from "./Phonebook/PhoneBookList";
 import { nanoid } from 'nanoid'
-import PhoneBookEditor from './Phonebook/PhoneBookEditor'
 import Filter from "./Phonebook/Filter";
 import Notiflix from 'notiflix';
 
