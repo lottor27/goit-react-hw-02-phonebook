@@ -2,7 +2,6 @@ import React from 'react';
 import css from './Filter.module.css'
 
 const Filter = ({ value, onChange }) => {
-// console.log(value);
 return (
 <label className={css.filterbox}>
     <samp className={css.textfilter}>Find contacts by name</samp> 

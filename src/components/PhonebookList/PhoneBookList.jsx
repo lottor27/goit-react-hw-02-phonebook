@@ -23,7 +23,4 @@ const PhoneBookList = ({visibleContacts, onDeleteContacts } ) =>{
       )
     }
 
-    
-
-
 export default PhoneBookList

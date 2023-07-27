@@ -21,10 +21,7 @@ this.setState({
 
 handleSabmit=(event) =>{
   event.preventDefault()
-
-  // console.log(this.state);
   this.props.onSubmit(this.state)
-
   this.reset()
 }
 

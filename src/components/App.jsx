@@ -47,8 +47,6 @@ export default class App extends Component  {
     this.setState(({ contacts }) => ({
       contacts: [contact, ...contacts],
     }));
-    console.log(this.state);
-    console.log(contact);
   };
 
 
@@ -76,9 +74,7 @@ export default class App extends Component  {
   formSubmitHandler = data =>{
     console.log(data);
     data.id = nanoid();
-    console.log(this.state.contacts);
     this.state.contacts.push(data)
-    console.log(this.state.contacts);
   }
 
 
@@ -88,7 +84,6 @@ export default class App extends Component  {
 
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter),)
-      
     
   };
   
